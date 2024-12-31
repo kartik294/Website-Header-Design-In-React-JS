@@ -1,0 +1,23 @@
+.background {
+  height: 100vh; /* Ensure it always covers the viewport height */
+  width: 100vw; /* Ensure it always covers the viewport width */
+  position: fixed; /* Keeps it fixed in place */
+  top: 0;
+  left: 0;
+  object-fit: cover; /* Ensures content scales properly */
+  z-index: -1; /* Keeps it behind other elements */
+}
+
+/* Add responsive adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .background {
+    object-fit: contain; /* Adjusts scaling for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .background {
+    height: auto; /* Allows the height to adjust dynamically */
+    width: 100%; /* Ensures it spans the full width */
+  }
+}

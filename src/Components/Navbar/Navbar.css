@@ -1,0 +1,138 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 40px;
+  color: white;
+}
+
+.nav-logo {
+  font-family: Outfit;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: 18px;
+  gap: 30px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.nav-menu li {
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover effects for desktop */
+.nav-menu li:hover {
+  color: #ff6347;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.nav-contact {
+  border-radius: 50px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #262626;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-contact:hover {
+  background: #ff6347;
+  color: white;
+}
+
+/* Hamburger Menu (Visible only on mobile) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-lines .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Close Icon (Visible only on mobile when menu is open) */
+.close-icon {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  align-self: flex-end;
+  display: none; /* Hidden by default */
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+  .nav {
+    margin: 10px 20px;
+  }
+
+  /* Hamburger Menu visible only in mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* Navigation menu that appears on mobile */
+  .nav-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #262626;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 18px;
+    border-radius: 10px;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  /* Menu open styles */
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 3px;
+    font-size: 20px;
+  }
+
+  /* Updated nav-contact for mobile */
+  .nav-contact {
+    background: #f3f4f6;
+    color: #262626;
+    padding: 6px 6px;
+  }
+
+  /* Hover effect for menu items on mobile */
+  .nav-menu li:hover {
+    background-color: #ff6347;
+    color: white;
+  }
+
+  /* Hover effect for nav-contact button on mobile */
+  .nav-contact:hover {
+    background: #ff6347;
+    color: white;
+  }
+
+  /* Show close icon only when the menu is open */
+  .nav-menu.open .close-icon {
+    display: block;
+  }
+}
